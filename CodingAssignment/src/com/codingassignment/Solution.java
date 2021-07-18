@@ -8,6 +8,12 @@ public class Solution {
 		bird.walk();
 		bird.sing();
 		bird.fly();
+		
+		Duck duck = new Duck();
+
+		Chicken chicken = new Chicken("chicken");
+
+		Chicken rooster = new Chicken("rooster");
 	}
 }
 
@@ -104,13 +110,26 @@ class Duck extends Bird {
 
 class Chicken extends Bird {
 
-	public Chicken() {
+	private String name = "chicken";
+
+	public String getName() {
+		return name;
+	}
+
+	public Chicken(String name) {
+		this.name = name;
 		this.setCanFly(false);
 	}
 
 	@Override
 	public String sing() {
-		return "Cluck cluck";
+		switch (getName()) {
+		case "rooster":
+			return "Cock-a-doodle-doo";
+
+		default:
+			return "Cluck cluck";
+		}
 	}
 
 	@Override

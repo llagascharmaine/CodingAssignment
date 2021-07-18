@@ -36,7 +36,7 @@ public class SolutionTest {
 	@Test
 	public void testChicken() {
 
-		Chicken chicken = new Chicken();
+		Chicken chicken = new Chicken("chicken");
 
 		assertTrue(chicken.isCanWalk());
 		assertFalse(chicken.isCanFly());
@@ -47,6 +47,18 @@ public class SolutionTest {
 		assertEquals(chicken.fly(), "I can't fly");
 		assertEquals(chicken.sing(), "Cluck cluck");
 		assertEquals(chicken.swim(), "I can't swim");
+
+		Chicken rooster = new Chicken("rooster");
+
+		assertTrue(rooster.isCanWalk());
+		assertFalse(rooster.isCanFly());
+		assertTrue(rooster.isCanSing());
+		assertFalse(rooster.isCanSwim());
+
+		assertEquals(rooster.walk(), "I am walking");
+		assertEquals(rooster.fly(), "I can't fly");
+		assertEquals(rooster.sing(), "Cock-a-doodle-doo");
+		assertEquals(rooster.swim(), "I can't swim");
 	}
 
 }
