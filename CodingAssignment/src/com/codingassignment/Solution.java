@@ -14,6 +14,12 @@ public class Solution {
 		Chicken chicken = new Chicken("chicken");
 
 		Chicken rooster = new Chicken("rooster");
+		
+		Parrot parrot1 = new Parrot("dog");
+
+		Parrot parrot2 = new Parrot("cat");
+
+		Parrot parrot3 = new Parrot("rooster");
 	}
 }
 
@@ -137,4 +143,35 @@ class Chicken extends Bird {
 		return "I can't fly";
 	}
 }
+
+class Parrot extends Bird {
+
+	private String livingNextTo = "";
+
+	public String getLivingNextTo() {
+		return livingNextTo;
+	}
+
+	public Parrot(String livingNextTo) {
+		this.livingNextTo = livingNextTo;
+	}
+
+	@Override
+	public String sing() {
+		switch (getLivingNextTo()) {
+		case "dog":
+			return "Woof, woof";
+
+		case "cat":
+			return "Me ow";
+
+		case "rooster":
+			return "Cock-a-doodle-doo";
+
+		default:
+			return "tweet tweet";
+		}
+	}
+}
+
 

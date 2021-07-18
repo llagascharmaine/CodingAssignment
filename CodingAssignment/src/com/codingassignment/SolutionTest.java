@@ -61,4 +61,39 @@ public class SolutionTest {
 		assertEquals(rooster.swim(), "I can't swim");
 	}
 
+	@Test
+	public void testParrot() {
+		Parrot parrotNextToDog = new Parrot("dog");
+		assertTrue(parrotNextToDog.isCanWalk());
+		assertTrue(parrotNextToDog.isCanFly());
+		assertTrue(parrotNextToDog.isCanSing());
+		assertFalse(parrotNextToDog.isCanSwim());
+
+		assertEquals(parrotNextToDog.walk(), "I am walking");
+		assertEquals(parrotNextToDog.fly(), "I am flying");
+		assertEquals(parrotNextToDog.sing(), "Woof, woof");
+		assertEquals(parrotNextToDog.swim(), "I can't swim");
+
+		Parrot parrotNextToCat = new Parrot("cat");
+		assertTrue(parrotNextToCat.isCanWalk());
+		assertTrue(parrotNextToCat.isCanFly());
+		assertTrue(parrotNextToCat.isCanSing());
+		assertFalse(parrotNextToCat.isCanSwim());
+
+		assertEquals(parrotNextToCat.walk(), "I am walking");
+		assertEquals(parrotNextToCat.fly(), "I am flying");
+		assertEquals(parrotNextToCat.sing(), "Me ow");
+		assertEquals(parrotNextToCat.swim(), "I can't swim");
+
+		Parrot parrotNextToRooster = new Parrot("rooster");
+		assertTrue(parrotNextToRooster.isCanWalk());
+		assertTrue(parrotNextToRooster.isCanFly());
+		assertTrue(parrotNextToRooster.isCanSing());
+		assertFalse(parrotNextToRooster.isCanSwim());
+
+		assertEquals(parrotNextToRooster.walk(), "I am walking");
+		assertEquals(parrotNextToRooster.fly(), "I am flying");
+		assertEquals(parrotNextToRooster.sing(), "Cock-a-doodle-doo");
+		assertEquals(parrotNextToRooster.swim(), "I can't swim");
+	}
 }
