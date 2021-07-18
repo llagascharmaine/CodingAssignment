@@ -100,16 +100,35 @@ public class SolutionTest {
 	@Test
 	public void testFish() {
 
-		Fish fish = new Fish();
-		assertFalse(fish.isCanWalk());
-		assertFalse(fish.isCanFly());
-		assertFalse(fish.isCanSing());
-		assertTrue(fish.isCanSwim());
+		Fish shark = new Fish("large", "grey", "eat other fish");
+		assertFalse(shark.isCanWalk());
+		assertFalse(shark.isCanFly());
+		assertFalse(shark.isCanSing());
+		assertTrue(shark.isCanSwim());
 
-		assertEquals(fish.walk(), "I can't walk");
-		assertEquals(fish.fly(), "I can't fly");
-		assertEquals(fish.sing(), "I can't sing");
-		assertEquals(fish.swim(), "I am swimming");
+		assertEquals(shark.walk(), "I can't walk");
+		assertEquals(shark.fly(), "I can't fly");
+		assertEquals(shark.sing(), "I can't sing");
+		assertEquals(shark.swim(), "I am swimming");
+
+		assertEquals(shark.getSize(), "large");
+		assertEquals(shark.getColor(), "grey");
+		assertEquals(shark.getUniqueAbility(), "eat other fish");
+
+		Fish clownFish = new Fish("small", "orange", "makes joke");
+		assertFalse(clownFish.isCanWalk());
+		assertFalse(clownFish.isCanFly());
+		assertFalse(clownFish.isCanSing());
+		assertTrue(clownFish.isCanSwim());
+
+		assertEquals(clownFish.walk(), "I can't walk");
+		assertEquals(clownFish.fly(), "I can't fly");
+		assertEquals(clownFish.sing(), "I can't sing");
+		assertEquals(clownFish.swim(), "I am swimming");
+
+		assertEquals(clownFish.getSize(), "small");
+		assertEquals(clownFish.getColor(), "orange");
+		assertEquals(clownFish.getUniqueAbility(), "makes joke");
 
 	}
 }
