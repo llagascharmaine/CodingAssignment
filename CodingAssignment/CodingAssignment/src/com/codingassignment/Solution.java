@@ -8,24 +8,18 @@ public class Solution {
 		bird.walk();
 		bird.sing();
 		bird.fly();
-
+		
 		Duck duck = new Duck();
 
 		Chicken chicken = new Chicken("chicken");
 
 		Chicken rooster = new Chicken("rooster");
-
+		
 		Parrot parrot1 = new Parrot("dog");
 
 		Parrot parrot2 = new Parrot("cat");
 
 		Parrot parrot3 = new Parrot("rooster");
-
-		Fish shark = new Fish("large", "grey", "eat other fish");
-
-		Fish clownFish = new Fish("small", "orange", "makes joke");
-		
-		Dolphin dolphin = new Dolphin();
 	}
 }
 
@@ -180,64 +174,4 @@ class Parrot extends Bird {
 	}
 }
 
-class Fish extends Animal {
 
-	private String size = "";
-	private String color = "";
-	private String uniqueAbility = "";
-
-	public Fish(String size, String color, String uniqueAbility) {
-		this.size = size;
-		this.color = color;
-		this.uniqueAbility = uniqueAbility;
-
-		this.setCanWalk(false);
-		this.setCanSwim(true);
-	}
-
-	public String getSize() {
-		return size;
-	}
-
-	public String getColor() {
-		return color;
-	}
-
-	public String getUniqueAbility() {
-		return uniqueAbility;
-	}
-
-	@Override
-	public String walk() {
-		return "I can't walk";
-	}
-
-	@Override
-	public String swim() {
-		return "I am swimming";
-	}
-}
-
-class Dolphin extends Animal {
-
-	public Dolphin() {
-		this.setCanWalk(false);
-		this.setCanSwim(true);
-		this.setCanSing(true);
-	}
-
-	@Override
-	public String walk() {
-		return "I can't walk";
-	}
-
-	@Override
-	public String swim() {
-		return "I am swimming";
-	}
-
-	@Override
-	public String sing() {
-		return "I am singing";
-	}
-}
