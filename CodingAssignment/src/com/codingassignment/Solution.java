@@ -14,7 +14,7 @@ public class Solution {
 class Animal {
 
 	private boolean canWalk = true;
-	private boolean canFly, canSing = false;
+	private boolean canFly, canSwim, canSing = false;
 
 	public void setCanWalk(boolean canWalk) {
 		this.canWalk = canWalk;
@@ -28,6 +28,13 @@ class Animal {
 		this.canFly = canFly;
 	}
 
+	public boolean isCanSwim() {
+		return canSwim;
+	}
+
+	public void setCanSwim(boolean canSwim) {
+		this.canSwim = canSwim;
+	}
 
 	public boolean isCanSing() {
 		return canSing;
@@ -47,6 +54,10 @@ class Animal {
 
 	public String fly() {
 		return "I can't fly";
+	}
+
+	public String swim() {
+		return "I can't swim";
 	}
 
 	public String sing() {
@@ -73,4 +84,38 @@ class Bird extends Animal {
 
 }
 
+class Duck extends Bird {
+
+	public Duck() {
+		this.setCanSwim(true);
+	}
+
+	@Override
+	public String sing() {
+		return "Quack quack";
+	}
+
+	@Override
+	public String swim() {
+		return "I am swimming";
+	}
+
+}
+
+class Chicken extends Bird {
+
+	public Chicken() {
+		this.setCanFly(false);
+	}
+
+	@Override
+	public String sing() {
+		return "Cluck cluck";
+	}
+
+	@Override
+	public String fly() {
+		return "I can't fly";
+	}
+}
 
