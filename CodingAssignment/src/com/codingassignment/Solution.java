@@ -20,6 +20,8 @@ public class Solution {
 		Parrot parrot2 = new Parrot("cat");
 
 		Parrot parrot3 = new Parrot("rooster");
+		
+		Fish fish = new Fish();
 	}
 }
 
@@ -171,6 +173,25 @@ class Parrot extends Bird {
 		default:
 			return "tweet tweet";
 		}
+	}
+}
+
+class Fish extends Animal {
+
+	public Fish() {
+		this.setCanWalk(false);
+		this.setCanSwim(true);
+	}
+
+
+	@Override
+	public String walk() {
+		return "I can't walk";
+	}
+
+	@Override
+	public String swim() {
+		return "I am swimming";
 	}
 }
 

@@ -96,4 +96,20 @@ public class SolutionTest {
 		assertEquals(parrotNextToRooster.sing(), "Cock-a-doodle-doo");
 		assertEquals(parrotNextToRooster.swim(), "I can't swim");
 	}
+	
+	@Test
+	public void testFish() {
+
+		Fish fish = new Fish();
+		assertFalse(fish.isCanWalk());
+		assertFalse(fish.isCanFly());
+		assertFalse(fish.isCanSing());
+		assertTrue(fish.isCanSwim());
+
+		assertEquals(fish.walk(), "I can't walk");
+		assertEquals(fish.fly(), "I can't fly");
+		assertEquals(fish.sing(), "I can't sing");
+		assertEquals(fish.swim(), "I am swimming");
+
+	}
 }
