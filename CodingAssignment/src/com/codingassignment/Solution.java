@@ -10,22 +10,17 @@ public class Solution {
 		bird.fly();
 
 		Duck duck = new Duck();
-
 		Chicken chicken = new Chicken("chicken");
-
 		Chicken rooster = new Chicken("rooster");
-
 		Parrot parrot1 = new Parrot("dog");
-
 		Parrot parrot2 = new Parrot("cat");
-
 		Parrot parrot3 = new Parrot("rooster");
-
 		Fish shark = new Fish("large", "grey", "eat other fish");
-
 		Fish clownFish = new Fish("small", "orange", "makes joke");
-		
 		Dolphin dolphin = new Dolphin();
+
+		Butterfly butterfly = new Butterfly("butterfly");
+		Butterfly caterpillar = new Butterfly("caterpillar");
 	}
 }
 
@@ -122,7 +117,7 @@ class Duck extends Bird {
 
 class Chicken extends Bird {
 
-	private String name = "chicken";
+	private String name = "";
 
 	public String getName() {
 		return name;
@@ -239,5 +234,40 @@ class Dolphin extends Animal {
 	@Override
 	public String sing() {
 		return "I am singing";
+	}
+}
+
+class Butterfly extends Animal {
+
+	private String metamorphosisStage = "buttefly";
+
+	public String getMetamorphosisStage() {
+		return metamorphosisStage;
+	}
+
+	public Butterfly(String metamorphosisStage) {
+		this.metamorphosisStage = metamorphosisStage;
+		if (metamorphosisStage == "butterfly") {
+			this.setCanWalk(false);
+			this.setCanFly(true);
+		}
+	}
+
+	@Override
+	public String walk() {
+		if (metamorphosisStage == "butterfly") {
+			return "I can't walk";
+		} else {
+			return super.walk();
+		}
+	}
+
+	@Override
+	public String fly() {
+		if (metamorphosisStage == "butterfly") {
+			return "I am flying";
+		} else {
+			return super.fly();
+		}
 	}
 }

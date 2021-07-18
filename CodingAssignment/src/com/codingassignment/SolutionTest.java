@@ -96,7 +96,7 @@ public class SolutionTest {
 		assertEquals(parrotNextToRooster.sing(), "Cock-a-doodle-doo");
 		assertEquals(parrotNextToRooster.swim(), "I can't swim");
 	}
-	
+
 	@Test
 	public void testFish() {
 
@@ -131,7 +131,7 @@ public class SolutionTest {
 		assertEquals(clownFish.getUniqueAbility(), "makes joke");
 
 	}
-	
+
 	@Test
 	public void testDolphin() {
 
@@ -146,5 +146,31 @@ public class SolutionTest {
 		assertEquals(dolphin.sing(), "I am singing");
 		assertEquals(dolphin.swim(), "I am swimming");
 
+	}
+
+	@Test
+	public void testButterfly() {
+
+		Butterfly caterpillar = new Butterfly("caterpillar");
+		assertTrue(caterpillar.isCanWalk());
+		assertFalse(caterpillar.isCanFly());
+		assertFalse(caterpillar.isCanSing());
+		assertFalse(caterpillar.isCanSwim());
+
+		assertEquals(caterpillar.walk(), "I am walking");
+		assertEquals(caterpillar.fly(), "I can't fly");
+		assertEquals(caterpillar.sing(), "I can't sing");
+		assertEquals(caterpillar.swim(), "I can't swim");
+
+		Butterfly butterfly = new Butterfly("butterfly");
+		assertFalse(butterfly.isCanWalk());
+		assertTrue(butterfly.isCanFly());
+		assertFalse(butterfly.isCanSing());
+		assertFalse(butterfly.isCanSwim());
+
+		assertEquals(butterfly.walk(), "I can't walk");
+		assertEquals(butterfly.fly(), "I am flying");
+		assertEquals(butterfly.sing(), "I can't sing");
+		assertEquals(butterfly.swim(), "I can't swim");
 	}
 }
