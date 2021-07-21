@@ -4,9 +4,6 @@ public class Parrot extends Bird {
 
 	private String livingNextTo = "";
 
-	public String getLivingNextTo() {
-		return livingNextTo;
-	}
 
 	public Parrot(String livingNextTo) {
 		this.livingNextTo = livingNextTo;
@@ -14,7 +11,7 @@ public class Parrot extends Bird {
 
 	@Override
 	public String sing() {
-		switch (getLivingNextTo()) {
+		switch (livingNextTo) {
 		case "dog":
 			return "Woof, woof";
 
